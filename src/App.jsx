@@ -56,7 +56,7 @@ export default function App() {
     <LanguageProvider>
       <CartProvider>
         <AuthProvider>
-          <BrowserRouter>
+          <BrowserRouter basename="/SmartBugs">
             <ScrollToTop />
             <Routes>
               {/* Admin routes */}
