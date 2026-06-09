@@ -1,16 +1,33 @@
-# React + Vite
+# SmartBugs - Requisitos do Projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Identidade e Marca
+- Site da SmartBugs separado totalmente da Protens
+- Paleta: verde, laranja e branco (seguindo a logo)
+- Tom: inovação, confiança, orgulho brasileiro/paranaense
+- Sem página de investidores
+- Sem página apresentando o fundador (opcional nos PDFs)
 
-Currently, two official plugins are available:
+## Site de Apresentação (prioridade máxima)
+- Apresentar a empresa, valores e missão
+- Mostrar produtos à venda e em protótipo (ex: gaiola) com vídeos
+- Destacar o problema do cliente e a SmartBugs como solução
+- Sem poluição visual, limpo e direto
+- PDF para download com descritivo de cada produto
+- Sem mencionar Bisfenol nas caixas
+- Suporte ao cliente com e-mail e contatos comerciais
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Idiomas
+- Português, Espanhol e Inglês, alternados por bandeira no topo
 
-## React Compiler
+## E-commerce
+- Produtos: caixa (mín. 1200 unidades, várias cores), gaiola e coletor de ovos
+- Login com cadastro (CPF/CNPJ, endereço, nome)
+- Pagamento: PIX, débito, crédito parcelado e boleto
+- Carrinho de compras
+- Sem vendas mínimas
+- Cotação de frete integrada (exceto Correios)
+- Aba para orçamento personalizado (compras grandes)
+- Aba de contato para compradores internacionais
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Gestão
+- Painel simples para a gerente Letícia administrar o site 
