@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 
 const LANGS = [
-  { code: 'pt', flag: '🇧🇷', label: 'PT' },
-  { code: 'es', flag: '🇪🇸', label: 'ES' },
-  { code: 'en', flag: '🇬🇧', label: 'EN' },
+  { code: 'pt', flag: '🇧🇷', label: 'PT', name: 'Português' },
+  { code: 'es', flag: '🇪🇸', label: 'ES', name: 'Español' },
+  { code: 'en', flag: '🇬🇧', label: 'EN', name: 'English' },
 ]
 
 export default function Navbar() {
@@ -16,6 +16,20 @@ export default function Navbar() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const langRef = useRef(null)
+
+  const activeLang = LANGS.find(l => l.code === lang)
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (langRef.current && !langRef.current.contains(e.target)) {
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const navLinks = [
     { to: '/', label: t('nav_home') },
@@ -63,22 +77,37 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          {/* Language switcher */}
-          <div className="hidden sm:flex items-center gap-1">
-            {LANGS.map(l => (
-              <button
-                key={l.code}
-                onClick={() => setLang(l.code)}
-                className={`text-sm px-2 py-1 rounded transition-all ${
-                  lang === l.code
-                    ? 'bg-white text-[#3f533c] font-bold'
-                    : 'text-green-200 hover:text-white'
-                }`}
-                title={l.label}
-              >
-                {l.flag}
-              </button>
-            ))}
+          {/* Language switcher — dropdown */}
+          <div className="hidden sm:block relative" ref={langRef}>
+            <button
+              onClick={() => setLangOpen(o => !o)}
+              className="flex items-center gap-1.5 text-sm text-green-100 hover:text-white transition-colors px-2.5 py-1.5 rounded-lg hover:bg-white/10 border border-white/20"
+            >
+              <span className="text-base leading-none">{activeLang.flag}</span>
+              <span className="font-semibold tracking-wide">{activeLang.label}</span>
+              <i className={`fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`}></i>
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-[calc(100%+6px)] bg-white rounded-xl shadow-2xl overflow-hidden w-40 py-1 z-50 border border-gray-100">
+                {LANGS.map(l => (
+                  <button
+                    key={l.code}
+                    onClick={() => { setLang(l.code); setLangOpen(false) }}
+                    className={`flex items-center gap-2.5 w-full px-4 py-2.5 text-sm text-left transition-colors ${
+                      lang === l.code
+                        ? 'bg-[#3f533c]/8 text-[#3f533c] font-bold'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    <span className="text-lg leading-none">{l.flag}</span>
+                    <span>{l.name}</span>
+                    {lang === l.code && (
+                      <i className="fa-solid fa-check ml-auto text-[#3f533c] text-xs"></i>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Cart */}
@@ -97,6 +126,15 @@ export default function Navbar() {
               {user.role === 'admin' && (
                 <Link to="/admin" className="text-xs bg-[#fb5421] text-white px-2 py-1 rounded font-medium hover:bg-orange-600 transition-colors">
                   {t('nav_admin')}
+                </Link>
+              )}
+              {user.role === 'customer' && (
+                <Link
+                  to="/minha-conta"
+                  className="flex items-center gap-1.5 text-xs text-green-100 hover:text-white transition-colors border border-white/20 px-2.5 py-1.5 rounded-lg hover:bg-white/10"
+                >
+                  <i className="fa-solid fa-user text-[10px]"></i>
+                  {t('nav_my_account')}
                 </Link>
               )}
               <button onClick={handleLogout} className="text-xs text-green-200 hover:text-white transition-colors">
@@ -166,9 +204,20 @@ export default function Navbar() {
               </div>
             )}
             {user && (
-              <button onClick={() => { handleLogout(); setMenuOpen(false) }} className="text-sm text-green-200">
-                {t('nav_logout')}
-              </button>
+              <div className="flex items-center gap-2">
+                {user.role === 'customer' && (
+                  <Link
+                    to="/minha-conta"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-sm text-green-200 hover:text-white transition-colors"
+                  >
+                    <i className="fa-solid fa-user mr-1 text-xs"></i>{t('nav_my_account')}
+                  </Link>
+                )}
+                <button onClick={() => { handleLogout(); setMenuOpen(false) }} className="text-sm text-green-200">
+                  {t('nav_logout')}
+                </button>
+              </div>
             )}
           </div>
         </div>

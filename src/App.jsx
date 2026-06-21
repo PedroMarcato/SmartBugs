@@ -18,6 +18,7 @@ import Login from './pages/Login'
 import Cadastro from './pages/Cadastro'
 import Orcamento from './pages/Orcamento'
 import Contato from './pages/Contato'
+import MinhaConta from './pages/MinhaConta'
 
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminProdutos from './pages/admin/AdminProdutos'
@@ -78,6 +79,7 @@ export default function App() {
               <Route path="/cadastro" element={<PublicLayout><Cadastro /></PublicLayout>} />
               <Route path="/orcamento" element={<PublicLayout><Orcamento /></PublicLayout>} />
               <Route path="/contato" element={<PublicLayout><Contato /></PublicLayout>} />
+              <Route path="/minha-conta" element={<PublicLayout><MinhaConta /></PublicLayout>} />
             </Routes>
           </BrowserRouter>
         </AuthProvider>
