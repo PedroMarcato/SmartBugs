@@ -173,13 +173,13 @@ export default function Home() {
 
       {/* ── Products ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="mx-auto px-4" style={{ maxWidth: '950px' }}>
           <div className="text-center mb-12">
             <span className="text-[#fb5421] font-semibold text-sm uppercase tracking-widest">{t('products_tag')}</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 mb-3">{t('products_title')}</h2>
             <p className="text-gray-500 max-w-xl mx-auto">{t('products_subtitle')}</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-10">
             {products.map(p => (
               <ProductCard key={p.id} product={p} onAddToCart={handleAddToCart} />
             ))}
