@@ -16,7 +16,6 @@ const initialStock = [
   { id: 'caixa-laranja', product: 'Caixa SmartBugs BSF', color: 'Laranja', qty: 4800, reserved: 0 },
   { id: 'caixa-amarelo', product: 'Caixa SmartBugs BSF', color: 'Amarelo', qty: 2400, reserved: 0 },
   { id: 'gaiola-default', product: 'Gaiola de Acasalamento BSF', color: '—', qty: 8, reserved: 2 },
-  { id: 'coletor-default', product: 'Coletor de Ovos BSF', color: '—', qty: 143, reserved: 15 },
 ]
 
 export default function AdminEstoque() {

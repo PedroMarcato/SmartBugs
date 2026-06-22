@@ -44,11 +44,11 @@ export default function ProductCard({ product, onAddToCart }) {
         <h3 className="font-bold text-gray-900 text-lg mb-1">{name}</h3>
         <p className="text-sm text-gray-500 mb-3 flex-1">{tagline}</p>
 
-        {product.hasMinQty && (
+        {/*{product.hasMinQty && (
           <p className="text-xs text-[#fb5421] font-medium mb-3">
             {t('min_qty')}: {product.minQty.toLocaleString('pt-BR')} {t('unit')}
           </p>
-        )}
+        )}*/}
 
         {product.colors.length > 0 && (
           <div className="flex gap-1.5 mb-3 flex-wrap">
@@ -69,7 +69,7 @@ export default function ProductCard({ product, onAddToCart }) {
               R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
             </span>
             {product.hasMinQty && (
-              <span className="text-xs text-gray-400 block">/ unidade</span>
+              <span className="text-xs text-[#fb5421] block"></span>
             )}
           </div>
           <div className="flex gap-2">

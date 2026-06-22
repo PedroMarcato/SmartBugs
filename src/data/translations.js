@@ -191,7 +191,7 @@ export const translations = {
     footer_products: 'Produtos',
     footer_company: 'Empresa',
     footer_support: 'Suporte',
-    footer_rights: '© 2024 SmartBugs. Todos os direitos reservados.',
+    footer_rights: '© 2026 SmartBugs. Todos os direitos reservados.',
     footer_terms: 'Termos de Uso',
     footer_privacy: 'Privacidade',
 
@@ -416,7 +416,7 @@ export const translations = {
     footer_products: 'Productos',
     footer_company: 'Empresa',
     footer_support: 'Soporte',
-    footer_rights: '© 2024 SmartBugs. Todos los derechos reservados.',
+    footer_rights: '© 2026 SmartBugs. Todos los derechos reservados.',
     footer_terms: 'Términos de Uso',
     footer_privacy: 'Privacidad',
 
@@ -640,7 +640,7 @@ export const translations = {
     footer_products: 'Products',
     footer_company: 'Company',
     footer_support: 'Support',
-    footer_rights: '© 2024 SmartBugs. All rights reserved.',
+    footer_rights: '© 2026 SmartBugs. All rights reserved.',
     footer_terms: 'Terms of Use',
     footer_privacy: 'Privacy',
 

@@ -59,23 +59,16 @@ export default function Home() {
             </div>
           </div>
           <div className="relative hidden md:block">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-square max-w-md mx-auto">
-              <img
+            <div className="relative rounded-3xl overflow-hidden border-white/10 mx-auto" style={{ maxWidth: '450px', padding: '25px' }}>
+              {/*<img
                 src="https://placehold.co/600x600/3f533c/ffffff?text=SmartBugs+BSF"
                 alt="SmartBugs"
                 className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3f533c]/60 to-transparent" />
+              />*/}
+              <img src={`${import.meta.env.BASE_URL}logoComBorda.png`} alt="SmartBugs BSF" className="w-full h-full" />
+              {/*<div className="absolute inset-0 bg-gradient-to-t from-[#3f533c]/60 to-transparent" />*/}
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/90 backdrop-blur rounded-2xl p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#fb5421] rounded-xl flex items-center justify-center flex-shrink-0">
-                    <i className="fa-solid fa-bug text-white text-xl"></i>
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-800 text-sm">Mosca-Soldado Negra (BSF)</p>
-                    <p className="text-xs text-gray-500">Hermetia illucens</p>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

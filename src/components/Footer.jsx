@@ -11,10 +11,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-9 h-9 rounded-full bg-[#fb5421] flex items-center justify-center">
+              {/*<div className="w-9 h-9 rounded-full bg-[#fb5421] flex items-center justify-center">
                 <span className="text-white font-black text-sm">SB</span>
-              </div>
-              <span className="text-white font-bold text-xl">SmartBugs</span>
+              </div>*/}
+              <span className="text-white font-bold text-xl">SMART BUGS</span>
             </div>
             <p className="text-sm text-green-200 mb-4">{t('footer_tagline')}</p>
             <p className="text-sm font-medium text-[#fb5421]">{t('footer_pride')}</p>
@@ -24,9 +24,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3">{t('footer_products')}</h4>
             <ul className="space-y-2 text-sm text-green-200">
-              <li><Link to="/produtos" className="hover:text-white transition-colors">Caixa SmartBugs BSF</Link></li>
-              <li><Link to="/produtos" className="hover:text-white transition-colors">Gaiola de Acasalamento</Link></li>
-              <li><Link to="/produtos" className="hover:text-white transition-colors">Coletor de Ovos BSF</Link></li>
+              <li><Link to="/produtos" className="hover:text-white transition-colors">Caixa SMART BUGS BSF</Link></li>
+              <li><Link to="/produtos" className="hover:text-white transition-colors">Gaiola de Acasalamento BSF</Link></li>
               <li><Link to="/loja" className="hover:text-white transition-colors">Loja Completa</Link></li>
             </ul>
           </div>

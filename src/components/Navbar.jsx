@@ -19,6 +19,8 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef(null)
 
+  const [logoError, setLogoError] = useState(false)
+
   const activeLang = LANGS.find(l => l.code === lang)
 
   useEffect(() => {
@@ -48,11 +50,22 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-[#3f533c] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-          <div className="w-9 h-9 rounded-full bg-[#fb5421] flex items-center justify-center">
-            <span className="text-white font-black text-sm">SB</span>
-          </div>
-          <span className="text-white font-bold text-xl tracking-tight">SmartBugs</span>
+        <Link to="/" className="flex items-center flex-shrink-0">
+          {!logoError ? (
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="SmartBugs"
+              className="h-11 w-auto"
+              onError={() => setLogoError(true)}
+            />
+          ) : (
+            <div className="flex items-center gap-2">
+              {/*<div className="w-9 h-9 rounded-full bg-[#fb5421] flex items-center justify-center">
+                <span className="text-white font-black text-sm">SB</span>
+              </div> */}
+              <span className="text-white font-bold text-xl tracking-tight">SMART BUGS</span>
+            </div>
+          )}
         </Link>
 
         {/* Desktop Nav */}
