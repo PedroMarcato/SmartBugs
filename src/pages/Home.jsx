@@ -86,8 +86,8 @@ export default function Home() {
       <section className="bg-[#fb5421] py-6">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center">
           {[
-            { value: '1.200+', label: 'Un. mín. por pedido (Caixa)' },
-            { value: '3', label: 'Produtos especializados' },
+            { value: 'A N1º', label: '1ª Caixa Autoempilhável da América Latina' },
+            { value: '2', label: 'Produtos especializados' },
             { value: '100%', label: 'Fabricado no Brasil' },
             { value: 'PR', label: 'Orgulho Paranaense' },
           ].map(s => (
